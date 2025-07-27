@@ -1,0 +1,20 @@
+.user-page {
+  position: relative;
+  /* width: 100vw;
+  height: 100vh; */
+  overflow: hidden;
+  background: url('../assets/bg2.jpg') no-repeat center center fixed;
+  background-size: cover;
+
+  display: flex;       
+  flex-direction: column;     
+  align-items: center;
+  justify-content: center;
+}
+
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}

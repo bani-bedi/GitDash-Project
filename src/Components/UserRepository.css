@@ -1,0 +1,205 @@
+
+
+/* Wrapper container */
+.repository-container {
+  padding: 30px;
+  backdrop-filter: blur(8px);
+  overflow: hidden;
+}
+
+/* Search box and dropdown */
+input[type="text"],
+select {
+  padding: 10px 15px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 16px;
+  margin: 0 10px 20px 0;
+  outline: none;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+input[type="text"]::placeholder {
+  color: #ccc;
+}
+
+input[type="text"]:focus,
+select:focus {
+  border-color: #facc15;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Table container with animated border */
+.table-wrapper {
+  position: relative;
+  border-radius: 16px;
+  border: 2px solid transparent;
+  border-image: linear-gradient(270deg, #7f00ff, #4facfe, #00f2fe, #43e97b, #f9ed32, #ff6ec4);
+  border-image-slice: 1;
+  padding: 3px;
+  background-size: 600% 600%;
+  animation: animatedBorder 8s ease infinite;
+}
+
+@keyframes animatedBorder {
+  0% { border-image-source: linear-gradient(270deg, #7f00ff, #4facfe, #00f2fe, #43e97b, #f9ed32, #ff6ec4); }
+  50% { border-image-source: linear-gradient(270deg, #ff6ec4, #f9ed32, #43e97b, #00f2fe, #4facfe, #7f00ff); }
+  100% { border-image-source: linear-gradient(270deg, #7f00ff, #4facfe, #00f2fe, #43e97b, #f9ed32, #ff6ec4); }
+}
+
+
+/* Table itself */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.6); /* translucent */
+  backdrop-filter: blur(12px);
+}
+
+/* Animated border  */
+ /* @keyframes animatedBorder {
+  0% { border: 0% 50%; }
+  50% { border: 100% 50%; }
+  100% { border: 0% 50%; }
+} */
+
+th, td {
+  padding: 16px 20px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+thead {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+th {
+  /* color: #facc15; */
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+td {
+  color: #eee;
+  font-size: 15px;
+}
+
+tr:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transition: 0.3s;
+}
+
+
+
+.search-filter {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+/* Input and Select box styling */
+.search-filter input[type="text"],
+.search-filter select {
+  padding: 12px 18px;
+  font-size: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  backdrop-filter: blur(10px);
+  outline: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Placeholder and option text */
+.search-filter input::placeholder,
+.search-filter select option {
+  color: #ccc;
+}
+
+/* Focus effects */
+.search-filter input:focus,
+.search-filter select:focus {
+  border-color: #facc15;
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 10px 2px rgba(250, 204, 21, 0.5);
+}
+
+/* Dropdown specific customization */
+.search-filter select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='18' viewBox='0 0 24 24' width='18' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 12px;
+  padding-right: 40px;
+  margin-top: 20px;
+}
+
+.repository-container {
+  padding: 30px;
+  backdrop-filter: blur(8px);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.table-wrapper {
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+/* Pagination styling */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.pagination button {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 500;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.pagination button:hover {
+  background-color: #facc15;
+  color: #000;
+}
+
+.pagination button.active {
+  background-color: #4facfe;
+  color: #fff;
+  border: 1px solid #00f2fe;
+}
+
+.viewclick{
+     padding: 14px 36px;
+    background: linear-gradient(135deg, #00f0ff, #ff00cc);
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 0 20px #ff00cc;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
