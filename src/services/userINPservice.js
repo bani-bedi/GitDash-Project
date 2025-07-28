@@ -9,5 +9,11 @@ function fetchData(data) {
 function fetchRepos(userDataURL) {
     return axios.get(userDataURL)
 }
+
+// API for the fetching the stats of the particular repo
+function fetchStats(repoName,Owner)
+{
+    return axios.get(`https://api.github.com/repos/${Owner}/${repoName}/stats/commit_activity`)
+}
 export default fetchData
-export {fetchData , fetchRepos}
+export {fetchData , fetchRepos , fetchStats}

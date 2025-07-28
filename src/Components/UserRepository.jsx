@@ -38,6 +38,7 @@ const UserRepository = () => {
     async function handleRepos() {
         try {
             const personRepoInfo = await fetchRepos(userDataURL);
+            console.log(personRepoInfo)
             setuserRepdata(personRepoInfo.data);
             setShowsortInp(personRepoInfo.data);
         } catch (err) {
@@ -76,9 +77,9 @@ const UserRepository = () => {
 
     const navigateview = useNavigate();
 
-    function handleview()
+    function handleview(reponame , repoOwner)
     {
-        navigateview('/details')
+        navigateview('/details' ,{state :{reponame , repoOwner }} )
     }
 
     return (
@@ -120,7 +121,7 @@ const UserRepository = () => {
                                 <td>{item.forks}</td>
                                 <td>{item.stargazers_count}</td>
                                 <td>{item.open_issues}</td>
-                                <td><button onClick={handleview} className='viewclick'>View</button></td>
+                                <td><button onClick={(e)=>handleview(item.name , item.owner.login)} className='viewclick'>View</button></td>
                             </tr>
                         ))}
                     </tbody>
