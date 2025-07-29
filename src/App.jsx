@@ -1,9 +1,10 @@
 
 import './App.css'
-import Repodetails from './Components/Repodetails';
+// import Repodetails from './Components/Repodetails';
 import UserRepository from './Components/UserRepository';
 import UserSearch from './Components/UserSearch'
 import ErrorBoundary from './pages/ErrorBoundary';
+import RepoPage from './pages/RepoPage';
 import { Userpage } from './pages/Userpage'
 
 
@@ -26,7 +27,7 @@ const router = createBrowserRouter([
   },
   {
     path:'/details',
-    element:<Repodetails/>
+    element:<RepoPage/>
   }
 ])
 
