@@ -27,7 +27,7 @@ const RepoContributers = ({ name, owner }) => {
     return (
         <div>
             {contributers.map(item => (
-                <div>
+                <div key={item.id}>
                     <img src={item.avatar_url} alt="avatar" />
                     <p>{item.login}</p>
                 </div>
